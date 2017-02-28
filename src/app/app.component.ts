@@ -3,14 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>{{title}}</h1>
-    
-     
-    <p class="subtitle"><em>{{subTitle}}</em></p>
-    
-    <p>New Title: <input [(ngModel)]="input"  ></p>
-    <p>Another message <input (keyup)="otherStuff ($event)"></p>
-    <button (click)="changeTitle()">Change that title </button> <span>You have clicked the button {{clickCount}} times</span>
+   
+    <router-outlet></router-outlet>
+    <a routerLink="/register">Register Page</a>
+    <a routerLink="/encounters">Encounter Page</a>
+    <a routerLink="/report">Report Page</a>
+    <a routerLink="/notfound">Not found Page</a>
   `,  
   styleUrls: ['./app.component.css']
 })

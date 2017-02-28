@@ -1,0 +1,16 @@
+body {
+    margin: 0 auto;
+    max-width: 616px;
+}
+.contain {
+    margin: 0 auto;
+    max-width: 616px;
+}
+.sub-title {
+    color: rgba(0,0,0,0.4);
+}
+.heading {
+    font-size: 32px;
+    line-height: 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}

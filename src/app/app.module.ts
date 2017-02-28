@@ -14,7 +14,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
   {path:'',component: HomeComponent},
   {path:'register',component: RegisterComponent},
-  {path:'encounter',component:EncountersComponent},
+  {path:'encounters',component:EncountersComponent},
   {path:'report',component:ReportComponent},
   {path:'**',component:NotfoundComponent}
 

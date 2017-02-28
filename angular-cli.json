@@ -1,6 +1,5 @@
 {
   "project": {
-    "version": "1.0.0-beta.28.3",
     "name": "mars-colony"
   },
   "apps": [
@@ -18,14 +17,15 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.sass"
       ],
-      "scripts": [],
+      "scripts": [
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
-      "dev": "environments/environment.ts",
-      "prod": "environments/environment.prod.ts"
-    }
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
     }
   ],
   "e2e": {
@@ -49,19 +49,14 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "prefixInterfaces": false,
-    "inline": {
-      "style": false,
-      "template": false
+    "styleExt": "sass",
+    "class": {
+      "spec": false
     },
-    "spec": {
-      "class": false,
-      "component": true,
-      "directive": true,
-      "module": false,
-      "pipe": true,
-      "service": true
+    "component": {
+      "spec": true,
+      "inlineStyle": false,
+      "inlineTemplate": false
     }
   }
 }
