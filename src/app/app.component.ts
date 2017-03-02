@@ -10,24 +10,8 @@ import { Component } from '@angular/core';
     <a routerLink="/report">Report Page</a>
     <a routerLink="/notfound">Not found Page</a>
   `,  
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
-  subTitle ='';
-  input = '';
-  clickCount =0;
-  valueOfInput ='';
-  others ='';
-  changeTitle(event){
-     this.title = this.input;
-     this.subTitle = this.others;
-     this.clickCount++;
-  }
-  something(event){
-    this.valueOfInput =  event.target.value;
-  }
-  otherStuff(event){
-    this.others = event.target.value;
-  }
+  
 }

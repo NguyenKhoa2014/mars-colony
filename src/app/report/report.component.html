@@ -1,3 +1,17 @@
-<p>
-  report works!
-</p>
+<main class="encounter-form">
+  <form [formGroup]="reportForm" class="report-form" (ngSubmit)="onSubmit($event)">
+    <h1>Report Encounter</h1>
+    <h2 class="button" (click)="onClickEncounters($event)">Safety on Mars is your responsibility</h2>
+
+    <label for="alien-type">Alien Type</label>
+    <select id="alien-type" formControlName="type">
+      <option [value]="NO_ALIEN_SELECTED">Select an alien...</option>
+      <option *ngFor="let alien of marsAliens" [value]="alien.type">{{ alien.type }}</option>
+    </select>
+
+    <label for="action">Encounter Details</label>
+    <textarea rows=10 cols="" id="action" placeholder="Action taken" formControlName="action"></textarea>
+
+    <button type="submit">Submit Report</button>
+  </form>
+</main>

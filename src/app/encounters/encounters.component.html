@@ -1,8 +1,39 @@
-<body>
+<!--<body>
 <h1 class="page-title">Encounter Mars Colony 1 </h1>
 <p>
   encounters works!
    
 </p>
 <h2 class="page-message">Tap Circle to enter </h2>
-</body>
+</body>-->
+
+<main class="encounters-list">
+  <h1>Recent Encounters</h1>
+  <h3>See an Alien? Report it</h3>
+
+  <!--<div class="menu">
+    <h2 class="button" (click)="onClickMainMenu($event)">Main Menu</h2>
+     
+  </div>-->
+
+
+
+  <ul class="encounter-list">
+    <li *ngFor="let encounter of marEncounters">
+      <div class="li-top-row">
+        <div>
+          <span>Date: </span>{{ encounter.date }}
+        </div>
+        <div>
+          <span>Type: </span>{{ encounter.atype }}
+        </div>
+      </div>
+      <div class="li-bottom-row">
+        <span>Action: </span>{{ encounter.action }}
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="button" (click)="onClickReportEncounter($event)"><a href="/report">Check In </a></h2>
+</main>
+
