@@ -1,6 +1,13 @@
 
 
-interface Encounter {
+interface encounter {
+    id: number;
+    date: string;
+    atype: string;
+    action: string;
+    colonist_id: string;
+}
+export class Encounter {
     id: number;
     date: string;
     atype: string;
@@ -47,6 +54,13 @@ interface Colonists {
     age: number;
  
 }
+export class Colonist {
+    constructor(
+        public name: string,
+        public age: number,
+        public job_id: string,
+    ) {}
+ }
 
  
 

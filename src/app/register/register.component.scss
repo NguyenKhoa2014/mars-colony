@@ -1,86 +1,43 @@
- $base-header-font: 'Distant_Galaxy', sans-serif;
-$base-font: 'Aaargh', sans-serif;
-$base-font-size: 16px;
-$mobile-background-color: #aa98a9;
-$base-background-colour: #aa98a9;
-$base-text-colour: #784040;
-$background-colour: rosybrown;
-$button-hover-colour: #8B5742;
-$form-control-background-colour: lightgray;
-$form-control-invalid-colour: red;
- 
-
-:host {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    @media (min-width: 500px) {
-        padding-top: 3rem;
-    }
+form {
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+}
+input {
+    background: black;
+    color: red;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 1.5rem;
+     
+    font-size: 1.2rem;
+}
+input, button, select {
+    line-height: 1.5rem;
+    color: white;
+}
+select::-ms-expand {
+    display: none;
+}
+select {
+    -moz-appearance: none;
+    -webkit-appearance:none;
+    color:red;
 }
 
-main {
-    padding: 1rem 0;
+fieldset{
     display: flex;
-    justify-content: center;
-    width: 500px;
-    background-color: $background-colour;
-
-    h1 {
-        margin: 1rem 0 1rem 0;
-    }
-
-    form {
-        margin: 1rem 0 1rem 0;
-        width: 300px;
-
-        label, input, select, button {
-            font-family: $base-font;
-            width: 100%;
-            padding: 0.5rem;
-            color: $base-text-colour;
-            border-radius: 5px;
-        }
-
-        input, select, button {
-            margin-bottom: 1rem;
-            border: 1px solid $base-text-colour; 
-        }
-
-        input, select {
-            background-color: $form-control-background-colour;
-            font-size: 0.75rem; 
-        }
-
-        select.ng-invalid.ng-touched, input.ng-invalid.ng-touched { //.ng-dirty
-            border-color: $form-control-invalid-colour;
-        }
-
-        label {
-            display: block;
-            text-align: left;
-            padding-bottom: 0.25rem;
-        }
-
-        select {
-            height: 35px;
-        }
-            
-        button {
-            font-size: 1rem; 
-            margin-top: 1.5rem;
-            font-family: $base-header-font;
-            width: 50%;
-            background-color: $base-text-colour;
-            color: $form-control-background-colour;
-            letter-spacing: 1px;
-
-            &:hover {
-                background-color: $button-hover-colour;
-            }
+    border: 0;
+    button {
+        background: transparent;
+        outline: none;
+        border: 0;
+        cursor: pointer;
+         
+        a {
+            color: white; 
+            text-decoration: none;
         }
     }
 }
-
-
