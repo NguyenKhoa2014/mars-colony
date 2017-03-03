@@ -20,7 +20,5 @@ export class  JobsAPIservice{
     getMarsJobs():Observable<Job[]> {
         return this.http.get(JOBS_URL)
                  .map( (res:Response) => res.json().jobs  );   
-    }
-
-     
+    }     
 }

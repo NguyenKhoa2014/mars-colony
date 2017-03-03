@@ -8,11 +8,18 @@ interface encounter {
     colonist_id: string;
 }
 export class Encounter {
-    id: number;
+    id: string;
     date: string;
     atype: string;
     action: string;
     colonist_id: string;
+    constructor(id: string,date: string, atype: string, action: string, colonist_id: string ){
+        this.id = id;
+        this.date = date;
+        this.atype = atype;
+        this.action = action;
+        this.colonist_id = colonist_id;
+    }
 }
 
 export class NewEncounter {

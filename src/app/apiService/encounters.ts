@@ -21,10 +21,16 @@ export class EncountersAPIservice{
     }
 
     getEncounters():Observable<Encounter[]>{
-
+        return this.http.get(ENCOUNTERS_URL)
+            .map( (res:Response) => res.json().jobs  );
     }
+ 
 
     saveNewEncounter(newEncounter: EncounterPostRequest):Observable<Encounter>{
+        const headers = new Headers();
+        headers.append('Content-Type','application/json');
+        return this.http.post(ENCOUNTERS_URL,newEncounter,{headers})
+        .map((res:Response) => res.json().encounter);
 
     }
 

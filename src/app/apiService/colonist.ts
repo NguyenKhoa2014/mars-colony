@@ -23,6 +23,6 @@ export class ColonistAPIservice{
         const headers = new Headers();
         headers.append('Content-Type','application/json');
         return this.http.post(COLONISTS_URL,newColonist,{headers})
-            .map((res:Response) => res.json().encounter);
+            .map((res:Response) => res.json().colonist);
     }
 }
