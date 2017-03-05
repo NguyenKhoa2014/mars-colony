@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
 import {NewEncounter} from '../models';
 import { Router, ActivatedRoute } from '@angular/router';
+import {EncountersAPIservice} from '../apiService/encounters';
 
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
-  styleUrls: ['./encounters.component.scss']
+  styleUrls: ['./encounters.component.scss'],
+  providers:[EncountersAPIservice]
 })
+ 
 export class EncountersComponent implements OnInit {
   id: string;
   date: string;
@@ -14,27 +18,27 @@ export class EncountersComponent implements OnInit {
   atype: string;
   action: string;
   marEncounters : NewEncounter [];
-  constructor() {
-    this.marEncounters = [
-       {"id": '3', 
-       "date": '2016-11-18', 
-       "colonist_id": '8', 
-       "atype": "The Predator", 
-       "action": "Rubbed mud on self to hide from heat sensors." 
-      },
-      {
-        "id": '4',
-        "date": '2016-11-18',
-        "colonist_id": '10',
-        "atype": "Special K",
-        "action": "Hunted the alien known as \"Special K\".\nHe offered donuts for his life. Took donuts, killed anyway."
-      }
-    ]
+  constructor(
+    private encoutersAPIService : EncountersAPIservice,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+
+      encoutersAPIService.getEncounters().subscribe(
+        (result) => {
+            //console.log(result);
+            this.marEncounters = result;
+        },(err) =>{
+          console.log(err);
+        })
    }
 
   ngOnInit() {
   }
 
-
+  onClickReportEncounter(event) {
+    event.preventDefault();
+    this.router.navigate(['../report']);
+  }
 
 }

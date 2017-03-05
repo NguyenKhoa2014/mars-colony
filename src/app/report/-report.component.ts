@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.scss'],
-  providers:[AliensAPIservice, EncountersAPIservice]
+  providers:[AliensAPIservice]
 })
 export class ReportComponent implements OnInit {
   marsAliens : Alien[];
@@ -23,12 +23,7 @@ export class ReportComponent implements OnInit {
     private router: Router
   ) 
   {
-     this.aliensAPIservice.getAliens().subscribe( (result)=>{
-        console.log(result);
-        this.marsAliens = result;
-     },(err) => {
-      console.log(err);
-    });
+    // this.getAliens();
     
     this.reportForm = new FormGroup({
       action: new FormControl('',[Validators.required, Validators.minLength(10)]),
@@ -36,13 +31,13 @@ export class ReportComponent implements OnInit {
     });
    }
     
-//    getAliens(){
-//       this.aliensAPIservice.getAliens()
-//                             .subscribe((result) =>{
-//                                 console.log(result);
-//                                 this.marsAliens = result;
-//                              });
-// }
+   getAliens(){
+      this.aliensAPIservice.getAliens()
+                            .subscribe((result) =>{
+                                console.log(result);
+                                this.marsAliens = result;
+                             });
+}
    
   ngOnInit() {
   }
@@ -56,10 +51,13 @@ export class ReportComponent implements OnInit {
    return `${ today.getFullYear() }-${ today.getMonth() + 1 }-${ today.getDate() }`;
   };
 
-
+    //  date: string;
+    // colonist_id: string;
+    // atype: string;
+    // action: string;
 
   submitClick(event) {
-    // event.preventDefault();
+    //event.preventDefault();
     if(this.reportForm.invalid){
       // this.link="#";
     }
@@ -68,13 +66,13 @@ export class ReportComponent implements OnInit {
       console.log('i am here');
       const alien_type = this.reportForm.get('type').value;
       const action = this.reportForm.get('action').value;
-      const newencounter = new NewEncounter( this.getEncounterDate(),localStorage.getItem('colonist_id'),  alien_type,action ); 
+      const newencounter = new Encounter( this.getEncounterDate(),localStorage.getItem('colonist_id'),  alien_type,action, "1" ); 
       const encounterPostRequest ={encounter:newencounter}
-      this.encountersService.saveNewEncounter(encounterPostRequest).subscribe( () => {
-        this.router.navigate(['../encounters']);
-      }, (err) => {
-        console.log(err);
-      });
+      // this.encountersService.saveNewEncounter(encounterPostRequest).subscribe( () => {
+      //   this.router.navigate(['../encounters']);
+      // }, (err) => {
+      //   console.log(err);
+      // });
       this.router.navigate(['../encounters']);
       console.log('success submitting');
       console.log(this.reportForm);

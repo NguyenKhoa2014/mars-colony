@@ -4,7 +4,7 @@ import { JOBS_URL, COLONISTS_URL } from '../models/API';
 import {FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl} from '@angular/forms';
 import {ColonistAPIservice} from '../apiService/colonist';
 import {JobsAPIservice} from '../apiService/jobs';
-import {AliensAPIservice} from '../apiService/alients';
+import {AliensAPIservice} from '../apiService/aliens';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
        
   }
   postNewColonist(event){
-     
+    
     event.preventDefault();
     if (this.registerForm.invalid){
       console.log(this.registerForm);
@@ -62,13 +62,16 @@ export class RegisterComponent implements OnInit {
       const age = this.registerForm.get('age').value;
       const job_id = this.registerForm.get('job_id').value;  
       const newColonist:NewColonist = new NewColonist(name,age,job_id);
-      const colonistPostRequest = {colonist:newColonist};
+      const colonistPostRequest = {colonist: newColonist};
       
       this.colonistApiService.saveColonist(colonistPostRequest)
                             .subscribe((result)=>{
                               console.log('inside subscribe');
-                              this.router.navigate(['/encounters']);
+                               
                               console.log('the colonist was saved', result);
+                             localStorage.setItem('colonist_id',result.id.toString());
+                             console.log(localStorage);
+                             this.router.navigate(['/encounters']);
                             }, (err) =>{
                                           console.log(err);
                             } )

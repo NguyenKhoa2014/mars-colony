@@ -1,7 +1,7 @@
 <main class="encounter-form">
   <form [formGroup]="reportForm" class="report-form" [ngClass]={invalid:reportForm.invalid}>
     <h1 class="section-heading">Report Encounter</h1>
-    <h2 class="button section-sub-heading" (click)="onClickEncounters($event)">Safety on Mars is your responsibility</h2>
+    <h2 class="button section-sub-heading" >Safety on Mars is your responsibility</h2>
 
     <label for="alien-type">Select Alien Type</label>
     <select required formControlName="type" name="type">
@@ -12,7 +12,7 @@
     <label for="action">Encounter Details</label>
     <textarea rows=10 cols="" id="action" placeholder="Action taken" required formControlName="action"></textarea>
 
-    <button [style.color]='red' class="button checkin" type="submit" (click)="submitClick(event)" >Check In </button>
+    <button [style.color]='red' class="button checkin" type="submit" (click)="submitClick($event)" >Check In </button>
 
   </form>
 </main>

@@ -22,7 +22,7 @@ export class EncountersAPIservice{
 
     getEncounters():Observable<Encounter[]>{
         return this.http.get(ENCOUNTERS_URL)
-            .map( (res:Response) => res.json().jobs  );
+            .map( (res:Response) => res.json().encounters  );
     }
  
 

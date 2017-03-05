@@ -23,13 +23,13 @@ export class Encounter {
 }
 
 export class NewEncounter {
-    id: string;
+    
     date: string;
     colonist_id: string;
     atype: string;
     action: string;
-    constructor(id:string, date:string,colonist_id:string,atype:string,action:string){
-        this.id = id;
+    constructor(  date:string,colonist_id:string,atype:string,action:string){
+        
         this.date = date;
         this.colonist_id = colonist_id;
         this.atype = atype;
@@ -54,20 +54,20 @@ export class Job {
     description: string;
 }
 
-interface Colonists {
+export interface Colonist {
     name: string;
     job: Job;
     id: string;
     age: number;
  
 }
-export class Colonist {
-    constructor(
-        public name: string,
-        public age: number,
-        public job_id: string,
-    ) {}
- }
+// export class Colonist {
+//     constructor(
+//         public name: string,
+//         public age: number,
+//         public job_id: string,
+//     ) {}
+//  }
 
  
 
