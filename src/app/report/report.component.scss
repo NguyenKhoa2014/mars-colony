@@ -1,12 +1,12 @@
 /* styles for report component */
 
-//import base styles scss
+@import '../scss/_theme.scss';
 
 
 .encounter-form {
     color: white;
     background-color: black;
-    width: 100%;
+    // width: 100%;
 }
 .section-heading, .section-sub-heading, .checkin {
     text-align: center;
@@ -16,17 +16,15 @@
     display: flex;
     justify-content: center;
 
-    @media (min-width: 500px) {
-        padding-top: 3rem;
-    }
+
 }
 
 main {
     padding: 1rem 0;
     display: flex;
     justify-content: center;
-    width: 100hw;
-    height: 100vw;
+    width: 100vw;
+    height: 100vh;
     background-color: #ff4500;
 
     h1 {
@@ -49,15 +47,16 @@ main {
 
     form {
         margin: 1rem 0 1rem 0;
-        width: 700px;
+        width: 100%;
 
         label, input, select, button, textarea {
             font-family: roboto sans-serif;
             width: 100%;
-            padding: 0.5rem;
+            // padding: 0.5rem;
             
             border-radius: 5px;
         }
+        
 
         input, select, button, textarea {
             margin-bottom: 1rem;
@@ -126,6 +125,10 @@ main {
 
         .ng-invalid {
             border-color: red;
+        }
+        textarea {
+            width: 99%;
+            padding: 1px;
         }
     }
 }
