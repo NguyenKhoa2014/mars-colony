@@ -1,7 +1,8 @@
-
+<!--<div class="register-container">-->
+<main class="page-template">
 <h1>Register </h1>
 <form [formGroup]="registerForm" 
-[ngClass]="{invalid:registerForm.invalid}"
+[ngClass]="{'submitting':clickedButton}"
 (ngSubmit)="postNewColonist($event)">
     <fieldset>
         
@@ -9,7 +10,7 @@
         <input type="number" placeholder="Age" formControlName="age" name="age" >
         <div class="custom-select">
             <select formControlName="job_id" name="job_id">
-                <option value="none" >Select an Occupation</option>
+                <option value selected="selected">Select an Occupation</option>
                 <option *ngFor="let job of marsJobs" value="{{job.id}}">{{ job.name }} </option>
             </select>
         </div>
@@ -20,3 +21,5 @@
     
 
 </form>
+</main>
+<!--<div>-->

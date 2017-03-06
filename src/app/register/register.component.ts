@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   marsJobs: Job[];
   
   registerForm: FormGroup;
-  clickedButton: false;
+  clickedButton: boolean;
 
   constructor(
     private colonistApiService: ColonistAPIservice,
@@ -54,6 +54,7 @@ export class RegisterComponent implements OnInit {
     
     event.preventDefault();
     if (this.registerForm.invalid){
+      this.clickedButton = true;
       console.log(this.registerForm);
     }
     else {
