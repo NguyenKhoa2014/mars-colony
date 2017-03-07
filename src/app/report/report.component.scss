@@ -30,14 +30,14 @@ main {
     background-color: #ff4500;
 
     h1 {
-        margin: 1rem 0 1rem 0;
+        margin: 1rem 0 0 0;
         font-size: 2.5rem;
         font-weight: lighter;
     }
 
     h2 {
         margin-bottom: .5rem;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .button-checkin {
@@ -137,7 +137,7 @@ main {
             border-color: red;
         }
         textarea {
-            width: 99%;
+            width: 99.5%;
             padding: 1px;
             margin-top:5px;
         }
