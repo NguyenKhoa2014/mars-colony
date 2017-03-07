@@ -6,6 +6,8 @@
 .encounter-form {
     color: white;
     background-color: black;
+    font-family: $main-font;
+    font-weight: lighter;
     // width: 100%;
 }
 .section-heading, .section-sub-heading, .checkin {
@@ -29,15 +31,22 @@ main {
 
     h1 {
         margin: 1rem 0 1rem 0;
+        font-size: 2.5rem;
+        font-weight: lighter;
     }
 
     h2 {
         margin-bottom: .5rem;
+        font-size: 1.8rem;
     }
 
-    .button {
+    .button-checkin {
+        font-size: 1.5rem;
+        font-weight: lighter;
         &:hover {
             color: #8B5742;
+            font-size: 1.5rem;
+            font-weight: lighter;
         }
         a {
             text-decoration: none;
@@ -65,7 +74,7 @@ main {
 
         input, select, textarea {
             background-color: white;
-            font-size: 0.75rem;
+             
              
         }
         input .ng-invalid {
@@ -98,6 +107,7 @@ main {
             display: block;
             text-align: left;
             padding-bottom: 0.25rem;
+            font-family: $main-font;
         }
 
         select {
@@ -107,7 +117,7 @@ main {
         }
             
         button {
-            font-size: 1rem; 
+            font-size: 1.5rem; 
             margin-top: 1.5rem;
             font-family: 'Roboto', sans-serif;
             width: 100%;
@@ -129,8 +139,12 @@ main {
         textarea {
             width: 99%;
             padding: 1px;
+            margin-top:5px;
         }
     }
+}
+textarea::placeholder {
+    font-size: 1rem;
 }
 
 
