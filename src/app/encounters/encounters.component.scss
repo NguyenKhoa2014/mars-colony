@@ -5,19 +5,30 @@ html, body {
     font-weight: 100;
     font-size: 18px;
     color: white;
+     
     
 }
-h1, h2 {
+h1, h3 {
      text-align: center;
+     font-weight: lighter;
  }
  li {
      margin-bottom: 1rem;
+     padding-left: 10px;
+     list-style: none;
  }
  span {
      font-style:italic;
      font-weight:bold;
      padding-right: 5px;
  }
- .button {
+.button {
      cursor: pointer;
+     width:100%;
+     text-align: center;
+     font-weight: lighter;
+     height:40px;
+     background-color: black;
+     color:white;
+     padding: 25px;;
  }
